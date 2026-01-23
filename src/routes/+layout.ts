@@ -6,7 +6,6 @@ export const prerender = true;
 export async function load({ params }) {
   const projects = await sanity.fetch(ALL_PROJECTS);
   const profile = await sanity.fetch(PROFILE_DATA);
-  console.log(profile, projects);
   return {
     projects,
     profile
