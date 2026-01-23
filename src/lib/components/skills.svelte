@@ -1,7 +1,6 @@
 <script>
       import { Tooltip } from "bits-ui";
 	import { onMount, onDestroy } from "svelte";
-  import gsap from "gsap";
 
     let { profile, scroller } = $props();
 
@@ -12,7 +11,11 @@
     let skillLine;
   let tween;
 
-  onMount(() => {
+  onMount(async () => {
+    const gsap = (await import("gsap")).default;
+    const ScrollTrigger = (await import("gsap/ScrollTrigger")).ScrollTrigger;
+
+    gsap.registerPlugin(ScrollTrigger);
     if (!skillLine) return;
     if (!container) return;
 

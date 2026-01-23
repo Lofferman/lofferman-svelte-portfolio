@@ -1,15 +1,18 @@
 <script>
-      import gsap from "gsap";
 	import { onDestroy, onMount } from "svelte";
     let { profile, scroller } = $props();
-
+ 
   // svelte-ignore non_reactive_update
   let container1,container2,container3;
   // svelte-ignore non_reactive_update
   let aboutline1,aboutline2, aboutline3;
   let tween;
 
-  onMount(() => {
+  onMount(async () => {
+    const gsap = (await import("gsap")).default;
+    const ScrollTrigger = (await import("gsap/ScrollTrigger")).ScrollTrigger;
+
+    gsap.registerPlugin(ScrollTrigger);
     if(container1){
             gsap.set(container1, {
       y: 60,

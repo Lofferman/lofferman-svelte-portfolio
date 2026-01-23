@@ -3,8 +3,6 @@
 	import { onDestroy, onMount } from "svelte";
        let { profile } = $props();
 
-       import gsap from "gsap";
-
 
 
 
@@ -13,8 +11,24 @@
     let textEl;
   let interval;
 
-  function animateText(blurbs: string[]) {
-    curIndex = (curIndex + 1) % blurbs.length;
+  onMount(async () => {
+    const gsap = (await import("gsap")).default;
+    const ScrambleTextPlugin = (await import("gsap/ScrambleTextPlugin")).ScrambleTextPlugin;
+
+    gsap.registerPlugin(ScrambleTextPlugin);
+      const blurbs = [
+    "Inventor. developer. creator.",
+    `${profile.headline}`,
+    "Full-stack Engineer",
+    "Digital Architect",
+    "Tech Enthusiast",
+    "Problem Solver"
+  ];
+    // initial text
+    textEl.textContent = blurbs[0];
+
+    interval = setInterval(() => {
+          curIndex = (curIndex + 1) % blurbs.length;
 
     gsap.to(textEl, {
       scrambleText: {
@@ -28,21 +42,7 @@
       overwrite: "auto",
       duration: 2.2
     });
-  }
-
-  onMount(() => {
-      const blurbs = [
-    "Inventor. developer. creator.",
-    `${profile.headline}`,
-    "Full-stack Engineer",
-    "Digital Architect",
-    "Tech Enthusiast",
-    "Problem Solver"
-  ];
-    // initial text
-    textEl.textContent = blurbs[0];
-
-    interval = setInterval(() => animateText(blurbs), 5000);
+    }, 5000);
   });
 
   onDestroy(() => {

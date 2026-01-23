@@ -1,7 +1,6 @@
 <script>
 	import ProjectCard from "./project-card.svelte";
     	import { onDestroy, onMount } from "svelte";
-  import gsap from "gsap";
 
     
     let { projects, scroller } = $props();
@@ -12,8 +11,11 @@
   let container1, container2;
   let line, line2;
   let tween;
-  onMount(() => {
- 
+  onMount(async () => {
+    const gsap = (await import("gsap")).default;
+    const ScrollTrigger = (await import("gsap/ScrollTrigger")).ScrollTrigger;
+
+    gsap.registerPlugin(ScrollTrigger);
     if(container1){
     tween = gsap.fromTo(
       container1,
