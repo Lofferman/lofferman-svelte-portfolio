@@ -17,7 +17,7 @@ export const ALL_PROJECTS = `
           }
         },
   techStack,
-    slug,
+    links,
     featured,
     visibility
   }

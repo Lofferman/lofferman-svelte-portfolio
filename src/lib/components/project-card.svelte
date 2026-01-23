@@ -1,8 +1,11 @@
-<script>
+<script lang="ts">
 	import Chip from "./chip.svelte";
       import { Button, Separator } from "bits-ui";
 
    let { project } = $props();
+    function handleClick(urlstring: string) {
+        window.open(urlstring, '_blank');
+    }
 
 </script>
 
@@ -12,9 +15,11 @@
     <p class="text-sm my-5">{project.summary}</p>
     <!-- start -->
      <div class="mt-auto">
-    <Button.Root class="rounded-input cursor-pointer bg-slate-700 rounded-2xl text-white shadow-mini hover:bg-dark/95 inline-flex h-8 items-center justify-center px-5.25 text-[15px] font-semibold active:scale-[0.98] active:transition-all"> 
-        Github 
-    </Button.Root>
+    {#each project.links as link}
+        <Button.Root onclick={() => handleClick(link.url)} class="rounded-input cursor-pointer bg-slate-700 rounded-2xl text-white shadow-mini hover:bg-dark/95 inline-flex h-8 items-center justify-center px-5.25 text-[15px] font-semibold active:scale-[0.98] active:transition-all"> 
+            {String(link.label).charAt(0).toUpperCase() + String(link.label).slice(1)}
+        </Button.Root>
+    {/each}
     <div class="">
         <Separator.Root class="bg-gray-300 my-4 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-[80%] mx-auto"/>
         <div class="items-end flex flex-wrap justify-center gap-2">
