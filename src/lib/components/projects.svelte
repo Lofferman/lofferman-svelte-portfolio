@@ -43,7 +43,7 @@
     tween = gsap.fromTo(
       container2,
       {
-        y: 60,
+        y: 100,
         opacity: 0
       },
       {
@@ -56,7 +56,6 @@
           scroller,
           start: "top 85%",
           end: "top 60%",
-          scrub: true
         }
       }
     );

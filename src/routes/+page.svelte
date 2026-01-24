@@ -16,9 +16,10 @@ let scroller;
     <div id="skills-section">
         <Skills scroller={scroller} profile={data.profile[0]}/>
     </div>
-    <div id="projects-section">
+    <div id="projects-section ">
         <Projects scroller={scroller} projects={data.projects}/>
     </div>
+    <div class="h-20"></div>
 </div>
 
 <style>
