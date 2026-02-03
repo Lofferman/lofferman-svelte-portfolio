@@ -24,7 +24,7 @@
         <Separator.Root class="bg-gray-300 my-4 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-[80%] mx-auto"/>
         <div class="items-end flex flex-wrap justify-center gap-2">
             {#each project.techStack as tech}
-                <Chip text={tech}/>
+                <Chip text={tech.text} color={tech.color}/>
             {/each}
         </div>
     </div>

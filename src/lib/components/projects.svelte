@@ -136,7 +136,7 @@
         justify-content: center;
         gap: 1rem;
         padding: 2rem;
-        color: white;
+        color: var(--theme-white);
     }
         .label{
         /* border-bottom: 2px solid white; */
@@ -156,7 +156,7 @@
   margin: 0 0 10px 0;
   position: relative;
   display: block;
-  background-color: white;
+  background-color: var(--theme-white);
 }
   .line {
     transform-origin: left center;

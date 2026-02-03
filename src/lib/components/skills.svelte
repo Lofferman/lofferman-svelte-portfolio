@@ -94,7 +94,7 @@
         justify-content: center;
         gap: 1rem;
         padding: 2rem;
-        color: white;
+        color: var(--theme-white);
     }
     .label{
         /* border-bottom: 2px solid white; */
@@ -105,15 +105,15 @@
     section {
         align-self: flex-start;
     }
-        .line {
-  width: 100%;
-  max-width: 800px;
-  height: 4px;
-  margin: 0 0 10px 0;
-  position: relative;
-  display: block;
-  background-color: white;
-}
+    .line {
+    width: 100%;
+    max-width: 800px;
+    height: 4px;
+    margin: 0 0 10px 0;
+    position: relative;
+    display: block;
+    background-color: var(--theme-white);
+    }
   .line {
     transform-origin: left center;
   }

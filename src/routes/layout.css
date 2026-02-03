@@ -19,3 +19,7 @@
   h1 {
     font-family: 'TWBold', sans-serif;
   }
+
+  :root {
+        --theme-white: #c6c6c6;
+  }

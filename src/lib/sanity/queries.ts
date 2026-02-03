@@ -23,12 +23,12 @@ export const ALL_PROJECTS = `
   }
 `;
 
-
 export const PROFILE_DATA = `
   *[_type == "profile"] | order(order asc) {
     name,
     headline,
     education,
+    blurbs[],
     skills[]{
       name,
       "image": image.asset->{

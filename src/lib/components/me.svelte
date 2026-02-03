@@ -16,14 +16,7 @@
     const ScrambleTextPlugin = (await import("gsap/ScrambleTextPlugin")).ScrambleTextPlugin;
 
     gsap.registerPlugin(ScrambleTextPlugin);
-      const blurbs = [
-    "Inventor. developer. creator.",
-    `${profile.headline}`,
-    "Full-stack Engineer",
-    "Digital Architect",
-    "Tech Enthusiast",
-    "Problem Solver"
-  ];
+      const blurbs = profile.blurbs || ['Lead Software Engineer'];
     // initial text
     textEl.textContent = blurbs[0];
 
@@ -34,13 +27,13 @@
       scrambleText: {
         text: blurbs[curIndex],
         chars: "upperAndLowerCase",
-        revealDelay: 0.2,
+        revealDelay: 0.1,
         tweenLength: true,
         // newClass: curIndex === 2 ? "border" : ""
       },
       ease: "power2.inOut",
       overwrite: "auto",
-      duration: 2.2
+      duration: 1.8
     });
     }, 5000);
   });
@@ -70,13 +63,14 @@
 
 <style>
     .container{
+        place-self: center;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 1rem;
         padding: 2rem;
-        color: white;
+        color: var(--theme-white);
     }
 
     </style>
