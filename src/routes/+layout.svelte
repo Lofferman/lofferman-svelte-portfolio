@@ -27,12 +27,19 @@ onMount(async () => {
 
       const bbox = svgEl.getBBox();
 
+      //Prep SVG onload
       svgEl.setAttribute(
         "viewBox",
         `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`    
       );
+      gsap.to(svgEl, {
+        opacity: 1,
+        duration: 5,
+        ease: "power1.out"
+      });
 
       
+      //Prep Circles
       const circle = document.createElementNS(
         "http://www.w3.org/2000/svg",
         "circle"
@@ -44,6 +51,8 @@ onMount(async () => {
 
       svg.appendChild(circle);
 
+
+      //Start Drawing contours
       const tl = gsap.timeline({
         repeat: -1,
         repeatDelay: 2,
@@ -61,6 +70,7 @@ onMount(async () => {
         }
       );
 
+    //Start Circle motion path
       tl.fromTo(
         circle,
         {
@@ -106,7 +116,7 @@ onMount(async () => {
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <div class="layout md:px-2 px-0">
 <div id="box"> 
-  <svg  bind:this={svgEl} id="stage" class="portrait:h-dvh landscape:w-[120%]" preserveAspectRatio="xMidYMid meet">
+  <svg  bind:this={svgEl} id="stage" class="portrait:h-dvh landscape:w-[120%] opacity-0" preserveAspectRatio="xMidYMid meet">
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="3" result="blur" />
