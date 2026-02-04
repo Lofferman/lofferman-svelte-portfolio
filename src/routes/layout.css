@@ -22,4 +22,5 @@
 
   :root {
         --theme-white: #c6c6c6;
+        --color-white: var(--theme-white);
   }

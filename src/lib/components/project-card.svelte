@@ -16,12 +16,12 @@
     <!-- start -->
      <div class="mt-auto">
     {#each project.links as link}
-        <Button.Root onclick={() => handleClick(link.url)} class="rounded-input cursor-pointer bg-slate-700 rounded-2xl text-white shadow-mini hover:bg-dark/95 inline-flex h-8 items-center justify-center px-5.25 text-[15px] font-semibold active:scale-[0.98] active:transition-all"> 
+        <Button.Root onclick={() => handleClick(link.url)} class="rounded-input white-text cursor-pointer bg-slate-600 hover:bg-slate-700 rounded-2xl shadow-mini hover:bg-dark/95 inline-flex h-8 items-center justify-center px-5.25 text-[15px] font-semibold active:scale-[0.98] active:transition-all"> 
             {String(link.label).charAt(0).toUpperCase() + String(link.label).slice(1)}
         </Button.Root>
     {/each}
     <div class="">
-        <Separator.Root class="bg-gray-300 my-4 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-[80%] mx-auto"/>
+        <Separator.Root class="bg-white my-4 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-[80%] mx-auto"/>
         <div class="items-end flex flex-wrap justify-center gap-2">
             {#each project.techStack as tech}
                 <Chip text={tech.text} color={tech.color}/>
@@ -54,5 +54,9 @@
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
         }
+
     }   
+    .white-text{
+            color: var(--theme-white);
+    }
     </style>

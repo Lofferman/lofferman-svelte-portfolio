@@ -21,7 +21,7 @@
 </div>
     {#if resume}
     <a href={resume.url} target="_blank" rel="noopener noreferrer">
-    <button class="mt-4 px-4 py-2 w-30 cursor-pointer bg-slate-600 text-white rounded hover:bg-slate-700">
+    <button class="mt-4 px-4 py-2 w-30 cursor-pointer bg-slate-600 resume rounded hover:bg-slate-700">
         Resume
     </button>
     </a>
@@ -32,5 +32,13 @@
     .icon{
         width: 48px;
         height: 48px;
+        filter: brightness(.7);
+        &:hover{
+             filter: brightness(.9);
+        }
+        
+    }
+    .resume{
+        color: var(--theme-white);
     }
 </style>
