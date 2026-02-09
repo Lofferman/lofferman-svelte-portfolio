@@ -175,9 +175,9 @@ onMount(async () => {
 	}
   .page-container {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.842);
-    border-left: 1px solid rgba(128, 128, 128, 0.473);
-    border-right: 1px solid rgba(128, 128, 128, 0.473);
+    background-color: #000000bd;
+    border-left: 1px solid rgba(128, 128, 128, 0.3);
+    border-right: 1px solid rgba(128, 128, 128, 0.3);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     min-height: 100vh;
     /* width: 80vw;
