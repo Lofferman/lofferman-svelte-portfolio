@@ -3,6 +3,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import Nav from '$lib/components/nav.svelte';
   import { onDestroy, onMount } from "svelte";
+	import Analytics from '$lib/analytics/analytics.svelte';
 
 let { children, data } = $props();
 
@@ -114,6 +115,7 @@ onMount(async () => {
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<Analytics/>
 <div class="layout md:px-2 px-0">
 <div id="box"> 
   <svg  bind:this={svgEl} id="stage" class="portrait:h-dvh landscape:w-[120%] opacity-0" preserveAspectRatio="xMidYMid meet">
