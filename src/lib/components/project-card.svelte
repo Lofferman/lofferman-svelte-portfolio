@@ -35,9 +35,11 @@
 <style>
     .project-card {
         background-color: rgba(34, 34, 34, 0.616);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
         border: 1px solid rgb(51, 51, 51);
         border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         padding-bottom: 1rem;
         text-align: center;
         font-weight: bold;

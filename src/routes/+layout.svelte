@@ -116,7 +116,7 @@ onMount(async () => {
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <Analytics/>
-<div class="layout md:px-2 px-0">
+<div class="layout md:px-2 px-0" id="top-section">
 <div id="box"> 
   <svg  bind:this={svgEl} id="stage" class="portrait:h-dvh landscape:w-[120%] opacity-0" preserveAspectRatio="xMidYMid meet">
   <defs>
