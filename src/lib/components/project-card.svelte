@@ -16,7 +16,7 @@
     <!-- start -->
      <div class="mt-auto">
     {#each project.links as link}
-        <Button.Root onclick={() => handleClick(link.url)} class="rounded-input white-text cursor-pointer bg-slate-600 hover:bg-slate-700 rounded-2xl shadow-mini hover:bg-dark/95 inline-flex h-8 items-center justify-center px-5.25 text-[15px] font-semibold active:scale-[0.98] active:transition-all"> 
+        <Button.Root onclick={() => handleClick(link.url)} class="mx-3 rounded-input white-text cursor-pointer bg-slate-600 hover:bg-slate-700 rounded-2xl shadow-mini hover:bg-dark/95 inline-flex h-8 items-center justify-center px-5.25 text-[15px] font-semibold active:scale-[0.98] active:transition-all"> 
             {String(link.label).charAt(0).toUpperCase() + String(link.label).slice(1)}
         </Button.Root>
     {/each}
